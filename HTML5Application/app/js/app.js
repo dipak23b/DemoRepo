@@ -1,6 +1,5 @@
 'use strict';
 
-//what does use strict means xxxxxxxxxxxxxxxxxxxxxxxxx???
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
   'ngRoute',
