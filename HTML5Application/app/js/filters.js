@@ -1,5 +1,5 @@
 'use strict';
-//3333333333333333
+
 /* Filters */
 
 angular.module('myApp.filters', []).
