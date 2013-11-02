@@ -1,5 +1,5 @@
 'use strict';
-
+//1403 change added logger
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
   'ngRoute',
