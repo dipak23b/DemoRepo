@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "Rest API Documentation for my demo resource",
+    "description": "Rest API Documentation.",
     "version": "v1",
     "title": "API documentation.",
     "contact": {
