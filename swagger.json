@@ -1,0 +1,142 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Rest API Documentation",
+    "version": "v1",
+    "title": "API documentation.",
+    "contact": {
+      "name": "BrightSpeed",
+      "url": "https://brightspeed.com",
+      "email": "btspd@btspd.com"
+    },
+    "termsOfService": "https://brightspeed.com"
+  },
+  "basePath": "/api/productms",
+  "tags": [
+    {
+      "name": "Product"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/product": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Add Product",
+        "description": "Add Product to inventory.",
+        "operationId": "addProduct",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Product to be created.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Product"
+            },
+            "x-examples": {
+              "example-1": {
+                "id": "pid123",
+                "name": "Product 123"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Product Created.",
+            "examples": {
+              "example-1": {
+                "success": "true"
+              }
+            }
+          },
+          "409": {
+            "description": "Constraint violated"
+          }
+        },
+        "x-internal": false
+      },
+      "parameters": []
+    },
+    "/product/{productId}": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Product Resource",
+        "description": "Returns the product information for a give product id.",
+        "operationId": "getProduct",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "description": "Product Id to retrieve",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            },
+            "examples": {
+              "example-1": {
+                "id": "string",
+                "name": "string"
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Product": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "x-examples": {
+        "example-1": {
+          "id": "string",
+          "name": "string"
+        }
+      }
+    }
+  },
+  "host": "localhost:8080",
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ]
+}
